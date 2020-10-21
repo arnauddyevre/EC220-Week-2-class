@@ -1,0 +1,345 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+
+\usetheme[progressbar=frametitle]{metropolis}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amsmath}
+\usepackage[english,brazil]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage{url,color}
+\usepackage{subfigure}
+\usepackage{amsthm,amsfonts,amssymb,amscd,amsxtra}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{array}
+
+%Font
+%\usefonttheme{professionalfonts} % using non standard fonts for beamer
+%\usefonttheme{serif} % default family is serif
+%\setmainfont{Liberation Serif}
+
+%making the section titles appear before each section
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \setbeamertemplate{section in toc}[sections numbered]
+    \vspace{0.3cm}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[]{EC220 -- Introduction to Econometrics} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\subtitle{Week 2}
+
+\author{Arnaud Dy\`evre} % Your name
+\institute[] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+}
+\date{October 8\textsuperscript{th} 2020} % Date, can be changed to a custom date
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{teo}{Theorem}
+\newtheorem{exemplo}{Exemplo}
+\newtheorem{corolario}{Corol\'{a}rio}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\x}{\textbf{x}}
+\newcommand{\y}{\textbf{y}}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\newcommand{\dom}{\mathrm{dom}}
+\newcommand{\ad}{\mathrm{ad}}
+\newcommand{\gerado}{\mathrm{span}}
+
+
+\begin{document}
+
+
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+
+
+
+\begin{frame}{A few words about myself}
+
+\begin{columns}[T]
+    \begin{column}{.7\textwidth}
+     
+\begin{itemize}[<+- | alert@+>]
+    \item First name pronounced "\textit{Ar-no}"
+    \item 1\textsuperscript{st}-year PhD student
+    \item Interests: \textbf{Macroeconomics} and \textbf{Public Economics}
+    \item Second time teaching EC220, and I'm excited about it!
+    \item Please send me an email if you have any question or doubt: \href{mailto:a.dyevre@lse.ac.uk}{a.dyevre@lse.ac.uk}
+    \begin{itemize}
+        \item Even if not related to the class
+    \end{itemize}
+\end{itemize}
+
+    \end{column}
+    \begin{column}{.3\textwidth}
+% Your image included here
+    \includegraphics[width=0.95\textwidth]{photo_alpes.jpeg} \\
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}{A few words about you guys}
+    
+    \begin{itemize}
+        \item Name
+        \item Where you're from
+        \item Programme of study
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Welcome to the course!}
+
+    \begin{itemize}
+        \item Challenging at times
+        \item \textbf{But} excellent preparation for quant jobs in \fcolorbox{yellow}{yellow}{consulting}, \fcolorbox{yellow}{yellow}{banking}, fields using \fcolorbox{yellow}{yellow}{machine learning} and \fcolorbox{yellow}{yellow}{research}
+        \begin{itemize}
+            \item Good preparation for learning Python, R and how to think like a data scientist
+        \end{itemize}
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    \textbf{Course organisation}
+    \begin{itemize}[<+- | alert@+>]
+        \item Joint teaching for EC220 and EC221 in MT
+        \begin{itemize}
+            \item Applied part, focus on causal questions
+        \end{itemize}
+        \item Split up in LT
+        \begin{itemize}
+            \item Theory, EC221 will use matrix algebra
+        \end{itemize}
+        \item Textbook: \textit{Mastering Metrics} by Joshua Angrist and Steve Pischke
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Welcome to the class!}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item 3 classes, all on Thursdays
+        \begin{itemize}
+            \item \textbf{Group 12:} 10:00-11:00
+            \item \textbf{Group 13:} 11:00-12:00
+            \item \textbf{Group 11:} 15:00-16:00
+        \end{itemize}
+        \item Classes start 5 minutes past the hour and end up 5 minutes before
+        \item Office hours: Thursdays, 16:00-17:00
+        \item Problem sets due the day before the class (Wednesday), at noon \textcolor{red}{(latest)}
+        \item \textbf{No cold-calling}, but I expect you to participate in class
+        \item Registers: done for every class
+        \item Please don't hesitate to interrupt me during the class
+        \begin{itemize}
+            \item Zoom makes conversations more awkward than in real life and I can't really see when you raise your hand
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Welcome to the class!}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item \textbf{Letters of recommendation}
+        \begin{itemize}
+            \item Lecturer of your choice writes it
+            \item ...based on information given by class teacher
+            \item Really helps if you submit problem sets, show up regularly, and participate in class
+        \end{itemize}
+        \item \textbf{Submission of problem sets}
+        \begin{itemize}
+            \item By group from Week 4 onward \textcolor{red}{(see Excel file)}
+            \item Submitted through Moodle (1 person for the group)
+            \item Informative grade (A, B, C, D) + feedback -- \textbf{Very useful for exam}
+        \end{itemize}
+        \item \textbf{Forum} on Piazza
+        \begin{itemize}
+            \item Frequently monitored, don't hesitate to help your fellow students
+        \end{itemize}
+    \item \textbf{Recording}
+    \begin{itemize}
+        \item Are you guys happy with this lecture being recorded?
+    \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Let's get started with \texttt{Stata}}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Read ``\textbf{EC220\_basic-stata-commands.pdf}"available on Moodle
+        \item We will go through ``\textbf{EC220\_intro-to-stata-week2.pdf}" together, available on Moodle
+        \item I will use a \texttt{.do} file called ``\texttt{ec220\_week2.do}''
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Why \texttt{Stata}?}
+
+    \begin{itemize}[<+- | alert@+>]
+        \item Extremely popular among economists
+        \item Intuitive
+        \item Excellent documentation
+        \item A lot of useful, and easily accessible commands for social science
+        \item \textbf{Much} better for data cleaning than more general programming languages such as Python
+        \item \textbf{But some drawbacks}
+\begin{itemize}
+    \item Proprietary
+    \item Cannot do much more than statistical analysis
+    \item R and Python community develops packages more rapidly (but with a lot of bugs sometimes)
+\end{itemize}
+    \end{itemize}
+    
+\vspace{0.5cm}
+
+
+\end{frame}
+
+\begin{frame}{Computer exercise}
+
+\begin{center}
+    Please open Stata on your computer and follow along
+\end{center}
+    
+\end{frame}
+
+\begin{frame}{Commands you will use frequently}
+
+\begin{itemize}
+    \item \texttt{clear all}
+\item \texttt{set more off}
+\item \texttt{use filename [, clear]}
+\item \texttt{cd}
+\item \texttt{describe}
+\item \texttt{list [varlist] [if] [in]}
+\item \texttt{summarize [varlist] [if] [in][, detail]}
+\item \texttt{tabulate varname [if] [in] [, row col]}
+\item \texttt{generate newvar = exp [if] [in]}
+\item \texttt{replace oldvar = exp [if] [in]}
+\item \texttt{save filename [, replace]}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Next week}
+
+\begin{itemize}
+    \item Another \texttt{Stata} session
+    \begin{itemize}
+        \item Using a dataset frequently used in Machine Learning competitions (such as \href{https://www.kaggle.com/c/titanic}{Kaggle})
+    \end{itemize}
+    \item Done individually
+    \item You will use what we have learned today
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}{Reminder}
+
+\textbf{Office hours:} Thursdays, 16:00-17:00\\
+
+Zoom link on Moodle
+
+\vspace{1cm}
+
+\begin{center}
+    \textcolor{red}{Have a great week!}
+\end{center}
+    
+\end{frame}
+
+\end{document}
